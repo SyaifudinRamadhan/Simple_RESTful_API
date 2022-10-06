@@ -28,13 +28,7 @@ const create = async (req, res) => {
 }
 
 const listAll = async (req, res) => {
-    let cars = await models.Car.findAll({
-        where: {
-            deleted: false
-        },
-        include: [{ all: true, nested: true }]
-    });
-    res.status(200).json({cars});
+    res.status(200).json({cars: req.my_data.cars});
     return;
 }
 
@@ -46,6 +40,7 @@ const getById = (req, res) => {
 const filterName = async (req, res) => {
     let cars = await models.Car.findAll({
         where:{
+            user_id: req.my_data.id,
             name: {[Op.like]: `%${req.params.filter}%`}
         },
         include: [{ all: true, nested: true }]

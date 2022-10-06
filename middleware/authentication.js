@@ -15,7 +15,7 @@ const verifyLogin = (req, res, next) => {
 }
 
 const verifyRegister = async (req, res, next) => {
-    if(req.body.username != undefined && req.body.password != undefined && req.body.email != undefined && req.body.first_name != undefined && req.body.last_name != undefined){
+    if(req.body.username != '' && req.body.username != undefined && req.body.first_name != '' && req.body.first_name != undefined && req.body.last_name != '' && req.body.last_name != undefined && req.body.email != '' && req.body.email != undefined && req.body.password != '' && req.body.password != undefined){
         let user = await models.User.findAll({
             where:{
                 username : req.body.username,

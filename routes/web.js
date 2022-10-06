@@ -5,6 +5,7 @@ const webRoutes = (app) => {
     app.get('/cars', ctrl.homepage.explore);
     app.get('/register-page', ctrl.homepage.register);
     app.get('/login-page', ctrl.homepage.login);
+    app.get('/auth/:auth/cars-dashboard', ctrl.homepage.homeManagement);
 }
 
 module.exports = {

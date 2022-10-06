@@ -58,7 +58,7 @@ const setCreate = (req, res, next) => {
     console.log('Dijalankan set create');
     uploadHandler(req, res);
 
-    if(req.body.name != undefined && req.body.type_car != undefined && req.body.price != undefined && req.body.available != undefined && req.body.available_at != undefined && req.body.capacity != undefined && req.body.description != undefined && req.body.transmission != undefined && req.body.year != undefined){
+    if(req.body.name != undefined && req.body.type_car != undefined && req.body.price != undefined && req.body.available != undefined && req.body.available_at != undefined && req.body.capacity != undefined && req.body.description != undefined && req.body.transmission != undefined && req.body.year != undefined && req.body.name != '' && req.body.type_car != '' && req.body.price != '' && req.body.available != '' && req.body.available_at != '' && req.body.capacity != '' && req.body.description != '' && req.body.transmission != '' && req.body.year != ''){
         // Ubah inputan bertipe angka menjadi type data number
         req.body.type_car = parseInt(req.body.type_car);
         req.body.price = parseInt(req.body.price);
