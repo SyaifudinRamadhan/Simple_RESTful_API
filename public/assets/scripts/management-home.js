@@ -21,3 +21,12 @@ document.querySelectorAll('.collapse-side').forEach(element => {
         openSidebar = sidebarOp(openSidebar);
     });
 });
+
+let userID = window.location.pathname.split('/')[2];
+
+document.getElementById('logout').addEventListener('click', ()=>{
+    requestServer(`${window.origin}/auth/${userID}/logout`, 'GET', {}, JSONData => {
+        console.log(JSONData);
+        window.location.replace('/login-page');
+    })
+})

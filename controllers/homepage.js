@@ -1,6 +1,8 @@
 const models = require('../models');
-const getUser = (id)=>{
-
+const getUser = async (id)=>{
+    return await models.User.findOne({
+        where:{id: id}
+    })
 }
 
 const homepage = (req, res) => {
@@ -33,6 +35,7 @@ const homeManagement = (req, res) => {
         layout: 'layouts/management-layout',
         userID: req.params.auth,
         title: 'Car Management',
+        myData: getUser(req.params.auth),
     });
 }
 
