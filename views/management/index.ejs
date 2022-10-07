@@ -1,0 +1,55 @@
+<%- contentFor('head') %> 
+<link rel="stylesheet" href="/assets/css/cars.css">
+<link rel="stylesheet" href="/assets/css/explore-page.css">
+<link rel="stylesheet" href="/assets/css/card-cars.css">
+
+<%- contentFor('main-content') %>
+<div class="cars" style="margin-top: 100px;">
+    <div class="container row row__mod mx-auto">
+        <div class="col-12">
+            <ul class="list_menu p-0">
+                <li>
+                    <a href="cars.html">Cars <span>
+                        <!-- <img src="images/chevron-right.png" alt="">\ -->
+                    </span></a>
+                </li>
+                <li>
+                    <a href="cars.html" class="last_menu">List Car</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <h2>List Car</h2>
+        </div>
+        <div class="col-lg-6 text-end">
+            <a class="btn btn-primary btn_anc" href="#"><img src="/assets/images/fi_plus.png"></span> New Car</a>
+        </div>
+        <div class="col-12">
+            <ul class="list_size p-0">
+                <li>
+                    <button type="button" class="btn btn-outline-info reset">All</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-outline-info size" value="md">Medium</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-outline-info size" value="sm">Small</button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-outline-info size" value="lg">Large</button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12">
+            <div id="cards-car"  class="row"></div>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('scripts') %> 
+<script>
+    let userID = '<%- userID %>';
+</script>
+<script src="/assets/scripts/explore-view-templating.js"></script>
+<script src="/assets/scripts/xmlhttprequest.js"></script>
+<script src="/assets/scripts/management-home-index.js"></script>

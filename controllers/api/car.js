@@ -45,7 +45,7 @@ const filterName = async (req, res) => {
         },
         include: [{ all: true, nested: true }]
     });
-    res.status(200).json(cars);
+    res.status(200).json({cars});
     return;
 }
 

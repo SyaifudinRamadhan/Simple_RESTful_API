@@ -1,3 +1,7 @@
+const models = require('../models');
+const getUser = (id)=>{
+
+}
 
 const homepage = (req, res) => {
     res.render('index', {
@@ -26,7 +30,9 @@ const login = (req, res) => {
 
 const homeManagement = (req, res) => {
     res.render('management/index', {
-        layout: 'layouts/blank-layout'
+        layout: 'layouts/management-layout',
+        userID: req.params.auth,
+        title: 'Car Management',
     });
 }
 
